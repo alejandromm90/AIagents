@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate · Evaluador de alquiler</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="chat-app">
+      <header class="chat-header">
+        <h1>🏠 Real Estate Assistant</h1>
+        <p>Comprueba si una persona es apta para alquilar un piso.</p>
+      </header>
+
+      <section id="chatWindow" class="chat-window" aria-live="polite"></section>
+
+      <form id="chatForm" class="chat-input" autocomplete="off">
+        <label class="sr-only" for="userInput">Escribe tu respuesta</label>
+        <input
+          id="userInput"
+          name="userInput"
+          type="text"
+          placeholder="Escribe aquí..."
+          required
+        />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <aside class="criteria-box">
+        <h2>Criterios aplicados</h2>
+        <ul>
+          <li>Los ingresos mensuales deben superar el 30% del alquiler mensual.</li>
+          <li>La persona debe tener contrato indefinido.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
