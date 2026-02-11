@@ -35,7 +35,7 @@ function isYes(value) {
 
 function evaluateApplicant() {
   const incomeLimit = state.rent * 0.3;
-  const meetsIncome = state.income <= incomeLimit;
+  const meetsIncome = state.income > incomeLimit;
   const meetsContract = state.contract === true;
 
   if (meetsIncome && meetsContract) {
@@ -43,7 +43,7 @@ function evaluateApplicant() {
       passed: true,
       message: `✅ Apta/o para alquilar. Ingresos: €${state.income.toFixed(
         2
-      )}; límite permitido (30% del alquiler): €${incomeLimit.toFixed(2)}.`,
+      )}; umbral mínimo (30% del alquiler): €${incomeLimit.toFixed(2)}.`,
     };
   }
 
@@ -52,7 +52,7 @@ function evaluateApplicant() {
     reasons.push(
       `los ingresos (€${state.income.toFixed(
         2
-      )}) superan el 30% del alquiler (€${incomeLimit.toFixed(2)})`
+      )}) no superan el 30% del alquiler (€${incomeLimit.toFixed(2)})`
     );
   }
   if (!meetsContract) {
